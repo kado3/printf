@@ -4,6 +4,7 @@
 /* Function prototypes for helper functions */
 int print_char(va_list args);
 int print_string(va_list args);
+int print_percent(va_list args);
 int print_int(va_list args);
 /**
 * _printf - Produces output according to a format.
@@ -28,6 +29,8 @@ if (format[i] == 'c')
 count += print_char(args);
 else if (format[i] == 's')
 count += print_string(args);
+else if (format[i] == '%')
+count += print_percent(args);
 else if (format[i] == 'd' || format[i] == 'i')
 count += print_int(args);
 else
