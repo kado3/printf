@@ -17,24 +17,24 @@ for (i = 0; format[i] != '\0'; i++)
 if (format[i] == '%')
 {
 if (format[i + 1] == '%')
-{	
+{
 _putchar('%');
 j++;
 i++;
 }
 else if (get_op_func(format, i + 1) != NULL)
-{	
+{
 j += (get_op_func(format, i + 1))(mylist);
 i++;
 }
 else
-{	
+{
 _putchar(format[i]);
 j++;
 }
 }
 else
-{	
+{
 _putchar(format[i]);
 j++;
 }
