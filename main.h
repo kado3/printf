@@ -34,6 +34,8 @@ int _putchar(char c); /*prototype putchar*/
 int _strcmp(const char *s1, char *s2);
 int (*get_op_func(const char *s, int pos))(va_list);
 char *itoa(long int, int);
+int print(char *);
+
 int _pow_recursion(int x, int y);
 int print_single_char(va_list c);
 int print_string_char(va_list s);
