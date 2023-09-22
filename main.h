@@ -1,29 +1,45 @@
 #ifndef MAIN_H
 #define MAIN_H
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <stdarg.h>
 
 /**
-  * struct specifiers - Struct specifiers
-  * @specifier: The conversion specifier
-  * @f: The function pointer
-  */
-typedef struct specifiers
+ * struct Pf_func - format
+ * _printf- print function
+ * @op: pointer
+ * @f: function pointer
+*/
+typedef struct Pf_func
 {
-	char *specifier;
-	int (*f)(va_list args);
-} spc_dt;
+	char *op;
+	int (*f)(va_list);
+} print_fun;
 
-int _write(char c);
-int _printf(const char *format, ...);
-int _print_a_char(va_list args);
-int _print_a_string(va_list args);
-int _print_format(const char *format, va_list args);
-int _print_spec(char format, va_list args);
-int _print_invalid_spec(char prev_format, char format, int count);
-int _print_a_integer(va_list args);
-void _recursion_integer(int a);
-int _print_int_binary(va_list args);
-void _recursion_int_binary(int a);
-int _validate_char(char _type);
+/**
+ * _printf - Entry function
+ * @format: operator
+ * Return: function
+ */
+int _printf(const char *format, ...); /*prototype printf*/
+/**
+ *_putchar-printing character
+ * @c:character to be printed
+ * Return: 0
+ */
+int _putchar(char c); /*prototype putchar*/
+int _strcmp(const char *s1, char *s2);
+int (*get_op_func(const char *s, int pos))(va_list);
 
-#endif 
+int _pow_recursion(int x, int y);
+int print_single_char(va_list c);
+int print_string_char(va_list s);
+int print_int(va_list i);
+int print_dec(va_list d);
+int print_decimal(va_list d);
+int the_range(unsigned int n);
+/*prototype function that compares two strings.*/
+#endif
